@@ -43,10 +43,20 @@ sources:
             
             - name: O_CUSTKEY
               description: "Foreign key to CUSTOMER.C_CUSTKEY (customer placing the order)."
+              tests:
+                - not_null
+                - relationships:
+                    arguments:
+                      to: ref('CUSTOMER')
+                      field: C_CUSTKEY
 
             - name: O_ORDERSTATUS
               description: "Order status: F = Filled, O = Open, P = Pending."
-            
+              tests:
+                - not_null
+                - accepted_values:
+                    values: ['F','O','P']
+
             - name: O_TOTALPRICE
               description: "Total price of the order before discounts/taxes."
             
@@ -73,7 +83,13 @@ sources:
           columns:
             - name: L_ORDERKEY
               description: "Foreign key to ORDERS.O_ORDERKEY (identifies the order)."
-            
+              tests:
+                - not_null
+                - relationships:
+                    arguments:
+                      to: ref('ORDERS')
+                      field: O_ORDERKEY
+
             - name: L_PARTKEY
               description: "Part identifier (links to PART.P_PARTKEY)."
 
@@ -97,10 +113,19 @@ sources:
             
             - name: L_RETURNFLAG
               description: "Return status: R = Returned, A = Accepted, N = Not returned."
-            
+              tests:
+                - not_null
+                - accepted_values:
+                    values: ['R','A','N']
+
             - name: L_LINESTATUS
               description: "Status of the line: O = Open, F = Finalized."
-            
+              tests:
+                - not_null
+                - accepted_values:
+                    values: ['O','F']
+
+                    
             - name: L_SHIPDATE
               description: "Date the item was shipped."
             
