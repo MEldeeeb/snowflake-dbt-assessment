@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  #------------------------------------------------------------------ tests related to dim_listings_cleansed ----------------------------------------------------------#
+  - name: stg_orders
+    description: ""
+    columns:
+      - name: 
+        description: ""
+        tests:
+          - 
+          - 
+
+
+  # --------------------------------------------------------------- tests related to dim_hosts_cleansed ---------------------------------------------------------------#
+  - name: customer_revenue
+    description: ""
+    columns:
+      - name: 
+        description: ""
+        tests:
+          - 
+          - 
+
+    
+ 

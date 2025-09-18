@@ -1,0 +1,13 @@
+version: 2.0
+
+sources:
+  - name: tpch_raw_data
+    database: snowflake_sample_data
+    schema: tpch_sf1
+    tables: 
+        - name: CUSTOMER
+          description: "The CUSTOMER table contains information about customers who place orders."
+        - name: ORDERS
+          description: "The ORDERS table contains information about customer orders. Each row represents a single order placed by a customer"
+        - name: LINEITEM
+          description: "The LINEITEM table contains detailed information about individual items within customer orders."
