@@ -1,11 +1,11 @@
+
 {{
-    {{
-      config(
-        materialized = 'view',
-        schema = 'silver'
-        )
-    }}
+    config(
+    materialized = 'view',
+    schema = 'silver'
+    )
 }}
+
 
 with orders as(
     select * from {{ source('tpch_raw_data', 'ORDERS') }}
