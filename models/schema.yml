@@ -60,6 +60,7 @@ models:
       - name: yearly_revenue
         description: The total revenue generated for each year, calculated as the sum of the extended price of all line items after applying the discount.
         data_type: number
+        
       - name: year
         description: The year in which the orders were placed, derived from the 'order_year' column in the 'stg_orders' table.
         data_type: number
