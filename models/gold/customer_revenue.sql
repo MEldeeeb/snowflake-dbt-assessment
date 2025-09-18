@@ -22,7 +22,7 @@ with oc as(
 select 
     oc.C_CUSTKEY,
     oc.C_NAME,
-    sum(l.L_EXTENDEDPRICE* (1 - l.l_discount)) as customer_revenue
+    sum(l.L_EXTENDEDPRICE* (1 - l.L_DISCOUNT)) as customer_revenue
 from oc
 join l on oc.O_ORDERKEY = l.L_ORDERKEY
 group by oc.C_CUSTKEY,oc.C_NAME 

@@ -1,7 +1,7 @@
 version: 2
 
 exposures:
-  - name: Sales Preformance 
+  - name: Sales Preformance Dashboard
     type: dashboard
     maturity: high
     url: https://tablue/dashboards/dashboard1
