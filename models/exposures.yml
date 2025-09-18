@@ -1,0 +1,13 @@
+version: 2
+
+exposures:
+  - name: Sales Preformance 
+    type: dashboard
+    maturity: high
+    url: https://tablue/dashboards/dashboard1
+    description: "Dashboard showing customer order trends and revenue KPIs"
+    depends_on:
+      - ref('customer_revenue')
+    owner:
+      name: "Analytics Team"
+      email: "analytics@company.com"
