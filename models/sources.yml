@@ -5,9 +5,117 @@ sources:
     database: snowflake_sample_data
     schema: tpch_sf1
     tables: 
+        #------------------------------------------------------------------ CUSTOMER source table ----------------------------------------------------------#
         - name: CUSTOMER
           description: "The CUSTOMER table contains information about customers who place orders."
+          columns:
+            - name: C_CUSTKEY
+              description: "Unique identifier for each customer (primary key)."
+           
+            - name: C_NAME
+              description: "Customer’s full name."
+           
+            - name: C_ADDRESS
+              description: "Street address of the customer."
+            
+            - name: C_NATIONKEY
+              description: "Foreign key to NATION.N_NATIONKEY (customer’s country)."
+            
+            - name: C_PHONE
+              description: "Customer phone number, including country code."
+            
+            - name: C_ACCTBAL
+              description: "Current account balance for the customer."
+            
+            - name: C_MKTSEGMENT
+              description: "Assigned market segment (e.g., BUILDING, AUTOMOBILE)."
+            
+            - name: C_COMMENT
+              description: "Free-form comments about the customer."
+
+
+        #------------------------------------------------------------------ ORDERS source table ----------------------------------------------------------#
         - name: ORDERS
           description: "The ORDERS table contains information about customer orders. Each row represents a single order placed by a customer"
+          columns:
+            - name: O_ORDERKEY
+              description: "Unique identifier for each order (primary key)."
+            
+            - name: O_CUSTKEY
+              description: "Foreign key to CUSTOMER.C_CUSTKEY (customer placing the order)."
+
+            - name: O_ORDERSTATUS
+              description: "Order status: F = Filled, O = Open, P = Pending."
+            
+            - name: O_TOTALPRICE
+              description: "Total price of the order before discounts/taxes."
+            
+            - name: O_ORDERDATE
+              description: "Date the order was placed."
+            
+            - name: O_ORDERPRIORITY
+              description: "Priority level of the order (e.g., 1-URGENT, 2-HIGH)."
+            
+            - name: O_CLERK
+              description: "Clerk who processed the order."
+            
+            - name: O_SHIPPRIORITY
+              description: "Shipping priority code (used in shipping analysis)."
+            
+            - name: O_COMMENT
+              description: "Free-form comments about the order."
+          
+
+
+        #------------------------------------------------------------------ LINEITEM source table ----------------------------------------------------------#
         - name: LINEITEM
           description: "The LINEITEM table contains detailed information about individual items within customer orders."
+          columns:
+            - name: L_ORDERKEY
+              description: "Foreign key to ORDERS.O_ORDERKEY (identifies the order)."
+            
+            - name: L_PARTKEY
+              description: "Part identifier (links to PART.P_PARTKEY)."
+
+            - name: L_SUPPKEY
+              description: "Supplier identifier (links to SUPPLIER.S_SUPPKEY)."
+            
+            - name: L_LINENUMBER
+              description: "Line number within the order (primary key with ORDERKEY)."
+            
+            - name: L_QUANTITY
+              description: "Quantity of the item ordered."
+            
+            - name: L_EXTENDEDPRICE
+              description: "Extended price for the line (quantity × part price)."
+            
+            - name: L_DISCOUNT
+              description: "Discount applied to the line item (0–1)."
+            
+            - name: L_TAX
+              description: "Tax rate applied to the line item (0–1)."
+            
+            - name: L_RETURNFLAG
+              description: "Return status: R = Returned, A = Accepted, N = Not returned."
+            
+            - name: L_LINESTATUS
+              description: "Status of the line: O = Open, F = Finalized."
+            
+            - name: L_SHIPDATE
+              description: "Date the item was shipped."
+            
+            - name: L_COMMITDATE
+              description: "Date promised by the customer to receive the item."
+            
+            - name: L_RECEIPTDATE
+              description: "Date the item was actually received."
+            
+            - name: L_SHIPINSTRUCT
+              description: "Shipping instructions (e.g., DELIVER IN PERSON)."
+            
+            - name: L_SHIPMODE
+              description: "Mode of shipping (e.g., AIR, RAIL, SHIP)."
+            
+            - name: L_COMMENT
+              description: "Free-form comments about the line item."
+          

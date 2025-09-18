@@ -41,7 +41,7 @@ models:
         description: Unique identifier for a customer, used to associate customer information with their orders and revenue.
         tests:
           - not_null
-          - unique
+          - unique        
         data_type: number
 
       - name: C_NAME
@@ -59,6 +59,9 @@ models:
     columns:
       - name: yearly_revenue
         description: The total revenue generated for each year, calculated as the sum of the extended price of all line items after applying the discount.
+        tests:
+          - not_null
+          - unique
         data_type: number
         
       - name: year
