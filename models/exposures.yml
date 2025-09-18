@@ -8,6 +8,7 @@ exposures:
     description: "Dashboard showing customer order trends and revenue KPIs"
     depends_on:
       - ref('customer_revenue')
+      - ref('yearly_revenue')
     owner:
       name: "Analytics Team"
       email: "analytics@company.com"

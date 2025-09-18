@@ -1,0 +1,1 @@
+{{ positive_value(ref('yearly_revenue'), 'yearly_revenue') }}

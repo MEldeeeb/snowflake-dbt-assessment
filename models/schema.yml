@@ -35,7 +35,7 @@ models:
   #------------------------------------------------------------------ customer_revenue Model ----------------------------------------------------------#
 
   - name: customer_revenue
-    description: '{{ doc("customer_revenue_description") }}' 
+    description: '{{ doc("customer_revenue_description") }}'
     columns:
       - name: C_CUSTKEY
         description: Unique identifier for a customer, used to associate customer information with their orders and revenue.
@@ -55,4 +55,11 @@ models:
   #------------------------------------------------------------------ customer_revenue Model ----------------------------------------------------------#
 
   - name: yearly_revenue
-    description: '{{ doc("yearly_revenue_description") }}' 
+    description: '{{ doc("yearly_revenue_description") }}'
+    columns:
+      - name: yearly_revenue
+        description: The total revenue generated for each year, calculated as the sum of the extended price of all line items after applying the discount.
+        data_type: number
+      - name: year
+        description: The year in which the orders were placed, derived from the 'order_year' column in the 'stg_orders' table.
+        data_type: number

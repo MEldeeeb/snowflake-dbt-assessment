@@ -19,7 +19,7 @@ with stg_orders as(
     from {{ source('tpch_raw_data', 'LINEITEM') }}
 )
 select 
-    order_year,
+    order_year as year,
     sum(l.L_EXTENDEDPRICE* (1 - l.L_DISCOUNT)) as Yearly_revenue
 from stg_orders o 
 join LINEITEM l 
