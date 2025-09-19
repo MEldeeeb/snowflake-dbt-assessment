@@ -11,6 +11,9 @@ sources:
           columns:
             - name: C_CUSTKEY
               description: "Unique identifier for each customer (primary key)."
+              tests:
+                - not_null
+                - unique
            
             - name: C_NAME
               description: "Customer’s full name."
@@ -40,7 +43,10 @@ sources:
           columns:
             - name: O_ORDERKEY
               description: "Unique identifier for each order (primary key)."
-            
+              tests:
+                - not_null
+                - unique
+           
             - name: O_CUSTKEY
               description: "Foreign key to CUSTOMER.C_CUSTKEY (customer placing the order)."
               tests:
@@ -125,7 +131,7 @@ sources:
                 - accepted_values:
                     values: ['O','F']
 
-                    
+
             - name: L_SHIPDATE
               description: "Date the item was shipped."
             
