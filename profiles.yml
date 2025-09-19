@@ -1,0 +1,13 @@
+snowflake_tpch_demo:
+  outputs:
+    dev:
+      account: JYNZTUJ-EH15396
+      database: tpch_db
+      password: kf9NALW-mMn4b!W
+      role: ACCOUNTADMIN
+      schema: dev
+      threads: 4
+      type: snowflake
+      user: DEEB
+      warehouse: DEV_WH
+  target: dev
