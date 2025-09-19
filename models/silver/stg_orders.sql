@@ -17,6 +17,7 @@ select
     c.C_CUSTKEY,
     c.C_NAME,
     o.O_ORDERDATE,
+    c.C_NATIONKEY,
     DATE_PART(YEAR, o.O_ORDERDATE) as order_year,
     o.O_TOTALPRICE
 from orders o

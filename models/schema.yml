@@ -41,7 +41,7 @@ models:
         description: Unique identifier for a customer, used to associate customer information with their orders and revenue.
         tests:
           - not_null
-          - unique        
+          - unique
         data_type: number
 
       - name: C_NAME
@@ -63,7 +63,19 @@ models:
           - not_null
           - unique
         data_type: number
-        
+
       - name: year
         description: The year in which the orders were placed, derived from the 'order_year' column in the 'stg_orders' table.
+        data_type: number
+  #------------------------------------------------------------------ revenue_per_nation Model ----------------------------------------------------------#
+
+  - name: revenue_per_nation
+    description: '{{doc("revenue_per_nation_description")}}'
+    columns:
+      - name: n_name
+        description: The name of the nation, derived from the Nations table in the tpch_db.dev schema.
+        data_type: varchar
+        
+      - name: revenue_per_nation
+        description: The total revenue generated per nation, calculated as the sum of the extended price multiplied by (1 - discount) for all orders associated with a nation.
         data_type: number
