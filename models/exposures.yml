@@ -9,6 +9,7 @@ exposures:
     depends_on:
       - ref('customer_revenue')
       - ref('yearly_revenue')
+      - ref('revenue_per_nation')
     owner:
       name: "Analytics Team"
       email: "analytics@company.com"
