@@ -13,9 +13,12 @@ The model joins data from the CUSTOMER, ORDERS, and LINEITEM tables to produce a
 {% enddocs %}
 
 
+
 {% docs yearly_revenue_description %}
 The 'yearly_revenue' model calculates the total revenue for each year by aggregating the extended price of line items, adjusted for discounts, and grouping the results by the order year. It joins data from the 'stg_orders' staging table and the 'LINEITEM' table to perform the calculation.
 {% enddocs %}
+
+
 
 {% docs revenue_per_nation_description %}
 The 'revenue_per_nation' model calculates the total revenue generated per nation by joining data from the 'Nations', 'stg_orders', and 'LINEITEM' tables. It aggregates the revenue by multiplying the extended price with the discount factor for each order line and groups the results by nation name, presenting the revenue in descending order.
