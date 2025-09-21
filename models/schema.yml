@@ -31,6 +31,9 @@ models:
       - name: O_TOTALPRICE
         description: The total price of the order, representing the monetary value of the transaction.
         data_type: number
+      - name: c_nationkey
+        description: The unique identifier for the nation associated with the customer. This key links the customer to their respective nation in the dataset.
+        data_type: number
 
   #------------------------------------------------------------------ customer_revenue Model ----------------------------------------------------------#
 
@@ -75,7 +78,7 @@ models:
       - name: n_name
         description: The name of the nation, derived from the Nations table in the tpch_db.dev schema.
         data_type: varchar
-        
+
       - name: revenue_per_nation
         description: The total revenue generated per nation, calculated as the sum of the extended price multiplied by (1 - discount) for all orders associated with a nation.
         data_type: number
