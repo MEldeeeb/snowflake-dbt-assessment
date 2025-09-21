@@ -23,6 +23,10 @@ sources:
             
             - name: C_NATIONKEY
               description: "Foreign key to NATION.N_NATIONKEY (customer’s country)."
+              tests:
+                - relationships:
+                    to: ref('Nations')
+                    field: N_NATIONKEY
             
             - name: C_PHONE
               description: "Customer phone number, including country code."
