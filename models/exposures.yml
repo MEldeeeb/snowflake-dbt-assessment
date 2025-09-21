@@ -11,5 +11,5 @@ exposures:
       - ref('yearly_revenue')
       - ref('revenue_per_nation')
     owner:
-      name: "Analytics Team"
-      email: "analytics@company.com"
+      name: "Data Team"
+      email: "Data@company.com"
