@@ -31,6 +31,7 @@ models:
       - name: O_TOTALPRICE
         description: The total price of the order, representing the monetary value of the transaction.
         data_type: number
+        
       - name: c_nationkey
         description: The unique identifier for the nation associated with the customer. This key links the customer to their respective nation in the dataset.
         data_type: number
